@@ -7,9 +7,11 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif']
+      },
+      gridTemplateColumns: {
+        '70/30': '70% 28%', //class '70/30', where first table column is 70% and second 28%
       },
     },
   },
