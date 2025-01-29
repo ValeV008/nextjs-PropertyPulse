@@ -11,6 +11,7 @@ import {FaGoogle} from 'react-icons/fa'
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(true)
     const pathName = usePathname()
 
     return (
@@ -74,16 +75,19 @@ const Navbar = () => {
                   className={`${pathName === '/properties' ? 'bg-black' : ''} text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >Properties</Link
                 >
+                { isLoggedIn && (
                 <Link
                   href="/properties/add"
                   className={`${pathName === '/properties/add' ? 'bg-black' : ''} text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >Add Property</Link
                 >
+                )}
               </div>
             </div>
           </div>
 
           {/* <!-- Right Side Menu (Logged Out) --> */}
+          { !isLoggedIn && (
           <div className="hidden md:block md:ml-6">
             <div className="flex items-center">
               <button
@@ -94,8 +98,10 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+          )}
 
           {/* <!-- Right Side Menu (Logged In) --> */}
+          { isLoggedIn && (
           <div
             className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0"
           >
@@ -187,6 +193,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
+          )}
         </div>
       </div>
 
@@ -204,17 +211,21 @@ const Navbar = () => {
             className={`${pathName === '/properties' ? 'bg-black' : ''} text-white block rounded-md px-3 py-2 text-base font-medium`}
             >Properties</Link
           >
+          { isLoggedIn && (
           <Link
             href="/properties/add"
             className={`${pathName === '/properties/add' ? 'bg-black' : ''} text-white block rounded-md px-3 py-2 text-base font-medium`}
             >Add Property</Link
           >
+          )}
+          { !isLoggedIn && (
           <button
             className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-5"
           >
             <i className="fa-brands fa-google mr-2"></i>
             <span>Login or Register</span>
           </button>
+        )}
         </div>
       </div>
       )}
