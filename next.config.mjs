@@ -2,10 +2,16 @@
 const nextConfig = {
     images: {
         remotePatterns: [
-            //allow to use images from this domain
+            //allow to use images from google
             {
                 protocol: 'https',
                 hostname: 'lh3.googleusercontent.com',
+                pathname: '**',
+            },
+            //allow to use images from cloudinary
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
                 pathname: '**',
             }
         ]
