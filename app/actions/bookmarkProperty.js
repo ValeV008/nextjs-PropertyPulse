@@ -10,12 +10,12 @@ async function bookmarkProperty(propertyId) {
     const sessionUser = await getSessionUser();
 
     if (!sessionUser || ! sessionUser.userId)
-        throw new Error("User ID is required")
+        throw new Error("User ID is required");
 
     const {userId} = sessionUser;
     const user = await User.findById(userId);
 
-    const isBookmarked = user.bookmarks.includes(propertyId);
+    let isBookmarked = user.bookmarks.includes(propertyId);
 
     let message;
 
