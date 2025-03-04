@@ -13,7 +13,7 @@ export function GlobalProvider({children}){
 
     return (
         <GlobalContext.Provider value={{
-            unreadCount,  // these objects will be shared with all pages
+            unreadCount,  // these objects will be shared with all pages that call useGlobalContext()
             setUnreadCount
         }}>
             {children}
@@ -21,6 +21,6 @@ export function GlobalProvider({children}){
     );
 }
 
-export function usersGlobalContext(){
+export function useGlobalContext(){
     return useContext(GlobalContext);
 }
