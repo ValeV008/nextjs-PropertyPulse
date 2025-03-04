@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useActionState } from "react";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
-import addMessage from "@/app/actions/AddMessage";
+import addMessage from "@/app/actions/addMessage";
 import SubmitMessageButton from "./SubmitMessageButton";
 
 const PropertyContactForm = ({property}) => {
