@@ -7,8 +7,6 @@ const FeaturedProperties = async () => {
 
     const properties = await Property.find({is_featured: true}).lean();
 
-    console.log(properties.length)
-
     return properties.length > 0 ? (
         <section className="bg-blue-50 px-4 pt-6 pb-10">
             <div className="container-xl lg:container m-auto">

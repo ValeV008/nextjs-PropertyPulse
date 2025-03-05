@@ -6,7 +6,6 @@ const connectDB = async () => {
     mongoose.set('strictQuery', true); //save to db only specified fields
 
     if (connected){
-        console.log('MongoDB is connected');
         return;
     }
 

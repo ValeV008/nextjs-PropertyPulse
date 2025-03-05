@@ -47,7 +47,6 @@ const PropertyMap = ({property}) => {
                     longitute: lng
                 });
             } catch (error) {
-                console.log(error);
                 setGeocodeError(true);
             } finally {
                 setLoading(false);
