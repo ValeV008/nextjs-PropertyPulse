@@ -31,4 +31,4 @@ async function markMessagesAsRead(messageId){
     return message.read;
 }
 
-export default markMessagesAsRead
+export default markMessagesAsRead;
